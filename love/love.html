@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 8th Monthsaryy Love<3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <style>
+         body {
+        margin:0;
+        background:mistyrose;
+        font-family: "Inconsolata", monospace;
+    }
+
+/* wings */
+
+.wing {
+    background:white;
+     border-radius: 12px 20px 60px 20px;
+     width:120px;
+     height:50px; margin-top:80px;
+     position:absolute;
+}
+
+/* right wing */
+
+.right {
+    margin-left:-60px;
+    left:50%;
+    animation:flap1 1s infinite;
+    border-bottom:3px solid rgba(0,0,0,.08);
+     border-radius: 12px 20px 60px 20px;
+    transform:rotate(-10deg) translate(250px,0);
+}
+
+@keyframes flap1 {
+    0% {
+        transform:rotate(-10deg) translate(250px,0);
+    }
+    
+    50% {
+        transform:rotate(-5deg) translate(250px,0);
+    }
+}
+.right:before {
+    position:absolute;
+    content:'';
+    background:white;
+    width:70%;
+    height:70%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    border-radius: 20px 20px 60px 20px;
+    transform:rotate(20deg) translate(-1px,0);
+    margin-top:38px;
+}
+
+.right:after {
+      position:absolute;
+    content:'';
+    background:white;
+    width:40%;
+    transform:rotate(29deg) translate(-8px,0);
+    height:30%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    border-radius: 0px 0px 60px 70px;
+    margin-top:66px;
+}
+
+/* left wing */
+
+.left {
+    border-radius:12px 20px 20px 60px;
+     margin-left:-60px;
+    left:50%;
+     animation:flap2 1s infinite;
+      border-bottom:3px solid rgba(0,0,0,.08);
+    transform:rotate(10deg) translate(-248px, 0);
+}
+
+@keyframes flap2 {
+    0% {
+        transform:rotate(10deg) translate(-248px,0);
+    }
+    
+    50% {
+        transform:rotate(5deg) translate(-248px,0);
+    }
+}
+
+
+.left:before {
+    position:absolute;
+    content:'';
+    background:white;
+    width:70%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    transform:translate(46%,0) rotate(-20deg);
+    height:60%;
+      border-radius:12px 20px 70px 70px;
+    margin-top:40px;
+}
+
+.left:after {
+      position:absolute;
+    content:'';
+    background:white;
+    width:40%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    height:30%;
+     transform:translate(164%,0) rotate(-34deg);
+     border-radius:0px 0px 70px 60px;
+    margin-top:58px;
+}
+
+/* heart */
+
+.heart{
+    position: absolute;
+    width: 120px;
+    z-index:1;
+    height: 100px;
+    margin-left:-50px;
+    left:50%;
+     animation: heart 1s infinite;
+    transform:scale(.8);
+    transition:.6s;
+    margin-top:60px;
+    cursor: pointer;
+    
+}
+.heart:before,
+.heart:after{
+    content: "";
+    width: 50px;
+    height: 80px;
+    position: absolute;
+    left: 50px;
+    top: 0;
+    border-radius: 50px 50px 6px 6px;
+    background: crimson;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+.heart:after{
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(.8) translate(0,0);
+    }
+    
+    50% {
+        transform: scale(.92) translate(0, 12px);
+    }
+    
+    100% {
+        transform:scale(.8);
+    }
+}
+
+/* envelope */
+
+  #envelope {
+  background: white; 
+  margin: 200px auto;
+  height: 200px;
+  position: relative;
+  width: 320px;
+  border-radius:8px;
+  overflow:hidden;
+  animation: floaty 1s infinite;
+}
+
+@keyframes floaty {
+    0% {
+        transform:translate(0,0);
+    }
+    
+    50% {
+        transform:translate(0, 12px);
+    }
+}
+
+/* bottom, left, and right sides */
+.sides {
+  border-color: transparent #fbfbfb #f7f7f7 #fcfcfc;
+  border-style: solid;
+  border-width: 90px 170px;
+  bottom: 0;
+  height: 0;
+  left: 0;
+  position: absolute;
+  width: 0;
+}
+
+/* top side */
+
+.top {
+  border-color: white transparent transparent;
+  border-style: solid;
+  border-width: 108px 140px 90px 140px;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: 50% 0;
+  width: 0;
+}
+
+.letter{
+    position: absolute;
+    z-index: 0;
+    background-color: wheat;
+    width: 70%;
+    border-radius: 2rem;
+    /* left: 15%; */
+    left: 99999rem;
+   top: 2rem;
+    display: flex;
+    flex-direction: column;
+
+}
+.letter.active{
+    position: absolute;
+    left: 15%;
+    transition: 1s ease-in-out;
+    z-index: 2;
+}
+.letter h2 {
+    position: relative;
+    text-align: center;
+}
+.letter h5{
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    padding: 0 2rem 0 1.5rem;
+    text-indent: 10rem;
+}
+img {
+    height: 10%;
+    width:10% ;
+    background-color: rgb(245, 245, 245);
+    padding: .6rem .6rem 2rem .6rem;
+    border: 1px solid black;
+    position: relative;
+}
+.ble{
+    transform: rotate(20deg);
+    position: relative;
+    left: 20rem;
+    bottom: 15rem;
+}
+.dost{
+    transform: rotate(-30deg);
+    position: relative;
+    left: 45rem;
+    bottom: 15rem;
+}
+.firstKiss{
+    transform: rotate(10deg);
+    position: relative;
+    left: 20rem;
+    bottom: 15rem;
+}
+.mcdu{
+    transform: rotate(20deg);
+    position: relative;
+    left: 20rem;
+    bottom: 35rem;
+}
+
+.samgyup{
+    transform: rotate(-10deg);
+    position: relative;
+    left: -5rem;
+    bottom: 38rem;
+}
+.timezone{
+    transform: rotate(-30deg);
+    position: relative;
+    left: -34rem;
+    bottom: 34rem;
+}
+
+@media screen and (max-width: 500px){
+    #envelope{
+        height: 150px;
+        width: 200px;
+
+    }
+    .heart{
+        width: 20px;
+        height: 10px;
+            
+    }
+    .wing.left{
+        margin-left: 28px;
+
+    }
+    .wing.right{
+        margin-left: -153px;
+    }
+
+    img {
+    height: 20%;
+    width:20% ;
+    background-color: rgb(245, 245, 245);
+    padding: .6rem .6rem 2rem .6rem;
+    border: 1px solid black;
+    position: relative;
+}
+.ble{
+    transform: rotate(20deg);
+    position: relative;
+    left: 10rem;
+    bottom: 10rem;
+}
+.dost{
+    transform: rotate(-30deg);
+    position: relative;
+    left: 12rem;
+    bottom: 15rem;
+}
+.firstKiss{
+    transform: rotate(10deg);
+    position: relative;
+    left: -12rem;
+    bottom: 15rem;
+}
+.mcdu{
+    transform: rotate(20deg);
+    position: relative;
+    left: 20rem;
+    bottom: 35rem;
+}
+
+.samgyup{
+    transform: rotate(-10deg);
+    position: relative;
+    left: -5rem;
+    bottom: 38rem;
+}
+.timezone{
+    transform: rotate(-20deg);
+    position: relative;
+    left: -4rem;
+    bottom: 38rem;
+}
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="letter">
+    
+            <h2>Happy 8th Monthsaryy Love! <3</h2>
+           
+                <h5>Love, so this is it, the month that you've been waiting. There are a lot of circumstances that we've done through with each other. Of course, with the help of both of us we survived it and still commited to continue this journey. It's been a long and tough time, yes it is, but there is a rainbow behind that storm and that are the moments we are happy, excited, arouse, surprised, cared, and loved, all of these are positive emotions, but the negative emotions that we are traumatized must treat as a lesson for us and not to bother us from our current situation and for our future. Love, it's been a blessing for me that we've found each other, I really believed we are destined and met at our past lives, for real. But I know that you knew we are destined and meant for each other. It's been a long processed for you, for sure, on our starting days I know and felt that you are adjusting to our fast pace relationship since we are together everyday and everytime. I saw to your actions and emotions that you are eager and commited on this one, you really don't want to lose it again. I am really thankful for your determination to adjust and love me unconditionally. I know for sure to myself that I will love you until I die, you sure are the spring and my sunshine, the light in my life, and the person that I will love in every single day of my life. Happy 8th Monthsarry Love, ILOOOVEEEYOUUUSOOMUCHHH MWAAAPSSUU.</h5>
+        
+    </div>
+    <div class="wing right"></div>
+    <div class="wing left"></div>
+     <div class="heart"></div>
+        <div id="envelope">
+       
+  <div class="top"></div>
+  
+  <div class="sides"></div>
+
+</div>
+<img src="ble.jpeg" class="ble" alt="" srcset="">
+<img src="dost.jpeg" class="dost" alt="">
+<img src="firstKiss.jpeg" class="firstKiss" alt="">
+<img src="mcdu.jpeg" class="mcdu" alt="">
+<img src="samgyup.jpeg" class="samgyup">
+<img src="timezone.jpeg" class="timezone">
+<script>
+        let heart = document.querySelector(".heart");
+        let letter = document.querySelector(".letter");
+        heart.addEventListener('click', function(){
+            letter.classList.add("active");
+        })
+</script>
+</body>
+
+</html>
